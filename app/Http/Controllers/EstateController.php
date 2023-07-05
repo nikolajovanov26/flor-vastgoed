@@ -54,7 +54,7 @@ class EstateController extends Controller
             'authorization' => 'Bearer ' . $token,
         ])->withBody(json_encode([
             'Page' => [
-                'Limit' => 1,
+                'Limit' => 100,
                 'Offset' => 0
             ]
         ]))->post($baseURL . 'v1/estates/list');
