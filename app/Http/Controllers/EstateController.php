@@ -69,13 +69,15 @@ class EstateController extends Controller
             foreach ($estate['pictures'] as $picture) {
                 $photoData[] = [
                     'name' => 'Estate Photo',
-                    'slug' => 'estate-photo',
+                    'slug' => 'estate-photo' . now()->timestamp,
                     'photolink' => $picture['urlLarge'],
                     'photoxxl' => $picture['urlXXL'],
                     'photos' => $picture['urlSmall'],
                     '_archived' => false,
                     '_draft' => false,
                 ];
+
+                sleep(1);
             }
 
             foreach ($photoData as $data) {
